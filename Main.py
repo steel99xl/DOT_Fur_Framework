@@ -1,6 +1,9 @@
 #Main script that the framework will run from
 import os
 import time
+import sys
+sys.path.append('./FrameWork')
+import Sparkle_Runner
 
 
 def Main():
@@ -14,7 +17,7 @@ def Menu():
     print("Main Menu")
     while True:
         print()
-        print("[1] Load Sparkles")
+        print("[1] Load Sparkles (removes currently loaded ones)")
         print("[2] Run Modules")
         print("[3] Craft Custom Run")
         print("[4] Expot Payload")
@@ -28,12 +31,15 @@ def Menu():
 
         if(UserInput == "1"):
             Loader_System()
-        if(UserInput == "2"):
             Sparkle_Menu()
+        if(UserInput == "2"):
+            Sparkle_Run_Call()
+
 
 
 def Sparkle_Menu():
     os.system("clear")
+    os.system("cat /dev/null > ./Cruella/Loaded_Sparkles.txt")
     print("Sparkle Manager")
     print("###############")
     print()
@@ -45,19 +51,20 @@ def Sparkle_Menu():
                 print(i)
         UserInput = input("Please enter the Sparkle you wan to load : ")
         if(UserInput in open("./Configs/Found_Sparkles.txt").read()):
-            f = open("./Configs/Loaded_Sparkles.txt", "+w")
+            f = open("./Configs/Loaded_Sparkles.txt", "a+")
             f.write(UserInput)
+            f.write("\n")
+            f.close()
         else:
             print("Error can load " + UserInput)
             print("Please make sure it is spelled right")
         UserInput = input ("Would you like to continue to add Sparkles : ")
-        if(UserInput.lower() != "yes" or UserInput.lower() != "y"):
+        if(UserInput.lower() == "yes" or UserInput.lower() == "y"):
             print("")
             print("")
+        else:
             break
             print("If you see this somthing went wrong")
-        else:
-            pass
 
 
 
@@ -71,6 +78,12 @@ def Loader_System():
     time.sleep(2)
     os.system("ls ./Sparkles > ./Configs/Found_Sparkles.txt")
     print("################")
+
+def Sparkle_Run_Call():
+    print("Sparkle Runner")
+    print("##############")
+    print()
+    Sparkle_Runner.Main()
 
 
 

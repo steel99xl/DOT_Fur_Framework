@@ -1,20 +1,16 @@
-#README
+﻿#README
+A Custom Exploit Framework for Furries
 
 ##INSTALLATION##
-Run the ```run.sh``` file to have it determine what dependencies you need for the
-main framework
+Run the
+run.sh
+file to have it determine what dependencies you need for the main framework
 
 
-###SUMMERY###
-The (DOT)Fur Framework is a framework system that is similar to the metsploite
-framework but is intended to be peer to peer rather than run by a company.
-The framework supports "Sparkles" (plugins/extensions) that any user can write, and example
-for each supported language is included, in depth documentation can be found in the
-"Documentation" folder along with documentation for the custom scripting language
-known as "Fur Script" this scripting language is designed to be used along side
-the (DOT)Fur Framework when writing, the limitations of the language mainly come
-down to what Sparkles you have available. The scripting language supports exporting
-so it can be run on any unix/linux system with. this is so you don't have to have
-the hole framework on the system just to run the scripts, The export is set to make
-as little files as possible so you might have multiple languages in one exported
-script. More documentation can be found in "Documentation/Fur_Script".
+###SUMMARY###
+	The (DOT)Fur Framework is a framework system similar to the metasploit framework, but it is intended to run as peer to peer rather than by a company.
+
+	The framework supports "Sparkles" (plugins/extensions) that any user can write and, as an example, for each supported language that is included, in-depth documentation can be found in the"Documentation" folder along with documentation for the custom scripting language known as "Fur Script".
+
+	This scripting language is designed to be used alongside the (DOT)Fur Framework when writing, the limitations of the language mainly comedown to what Sparkles you have available. The scripting language supports exporting so that it can be run on any Unix/Linux system. This is so you don't need to have the whole framework installed on the system if you just want to run the scripts.
+The export is set to create as little files as possible so that you might have multiple languages in the same exported script. More documentation can be found in "Documentation/Fur_Script"

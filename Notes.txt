@@ -1,0 +1,10 @@
+FrameWork - Parser
+	have it parse through an aplication and find all "def" declorations and then read those lines more indepth to see if their are anything in the "()" if to trace look throught the aplication to find those variables and that type they are supose to be "string,int,bool" and if it can add those to the notes of that option so the user know that that needs input, with everything else just add the option to the list so they are specify one or make a longer more in depth one EX : " attack = ip_scan(192.168.1.0, 24); HP_KILL(attack)" or " HP_kill((ip_scan(192.168.1.0, 24))" either should work in this case if possible other optimization like " set(ip_scan(192.168.1.0, 24), out attack)" or some other option canbe used to it only hase to run that function once and store the data in a variable, how this ould be done would varie depending on the diffrent types of out put
+
+NETWORKING Ideas
+
+"notices your 'Windows Update Server' OwO"
+
+
+Personal Pref ideas:
+ i might use << and >> like in C++ becasue that would be easier to find and pars with out worry if some one setting that as a variable or some other shit

@@ -1,0 +1,29 @@
+###### 
+Cruella Options 
+###### 
+Cruella.geo():
+Cruella.domains():
+Cruella.address():
+Cruella.external_ip():
+Cruella.terminal():
+Cruella.metasploit():
+Cruella.mac():
+Cruella.webserver():
+Cruella.scan():
+Cruella.wifi():
+Cruella.Device():
+Cruella.Network():
+Cruella.Monitor_Mode():
+Cruella.file_len():
+Cruella.Attack():
+Cruella.Menu():
+Cruella.jammer():
+Cruella.Connected_Networks():
+Cruella.Wifi_Jam():
+Cruella.Menu():
+Cruella.quit():
+Cruella.main():
+###### 
+Loader Options 
+###### 
+Loader.Main():
