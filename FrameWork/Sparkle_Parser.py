@@ -16,8 +16,7 @@ def Setup():
 
 def Parse():
     # PLS SEND HELPS
-    #os.system("cat /dev/null > ./Configs/Parse_Sparkles_Buffer.txt")
-    #os.system("cat /dev/null > ./Configs/Parsed_Sparkles.txt")
+
     Parse_Sparkles_Buffer = open("./Configs/Parse_Sparkles_Buffer.txt" , "a+")
 
     for i in Loaded_Sparkles.splitlines():
@@ -34,7 +33,32 @@ def Parse():
                 Parser = Parser.strip('def')
                 Parser = Parser.strip(' ')
                 if("()" not in line):
+                    Variable_Line = Parser
+                    Variable_Line = Variable_Line.strip("A.B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z")
+                    Variable_Line = Variable_Line.strip("a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z")
+
+                    print(Variable_Line)
+
+                    if("," in line):
+                        Var1 = Variable_Line
+                        Var1 = Var1.strip(":")
+                        Var1 = Var1.strip("(")
+                        Var1 = Var1.rstrip(")")
+                        if("," in Var1):
+                            Var2 = Var1
+                            X = Var1.find(",")
+                            Y = len(Var1)
+                            Var1 = Var1[0:X]
+                            Var2 = Var2[X+1:Y]
+
+
+
+                        print(Var1)
+                        print(Var2)
+
+
                     print("works lol ")
+
                 Parse_Sparkles_Buffer.write(Sparkle+Parser + "\n")
 
 
