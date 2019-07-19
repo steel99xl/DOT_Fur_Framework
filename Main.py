@@ -1,3 +1,5 @@
+#!/bin/python3
+
 #Main script that the framework will run from
 import os
 import time

@@ -26,4 +26,4 @@ Cruella.main():
 ###### 
 Loader Options 
 ###### 
-Loader.Main(test,otherVar):
+Loader.Main(Integer,String):

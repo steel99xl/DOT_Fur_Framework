@@ -28,9 +28,9 @@ def Parse():
         Parse_Sparkles_Buffer.write("###### \n")
         Parse_Sparkles_Buffer.write(Sparkle.rstrip('.') + " Options \n")
         Parse_Sparkles_Buffer.write("###### \n")
-        print("######")
-        print(Sparkle)
-        print("")
+        #print("######")
+        #print(Sparkle)
+        #print("")
         for line in open("./Sparkles/"+ i).read().splitlines():
             if("def" in line):
                 Parser = line.strip(' ')
@@ -48,6 +48,7 @@ def Parse():
                         Var1 = Var1.strip(":")
                         Var1 = Var1.strip("(")
                         Var1 = Var1.rstrip(")")
+                        Parse_Buffer = Var1
                         Buffer_Line = Var1
                         if("," in Variable_Line):
                             X = Variable_Line.count(",") - 1
@@ -71,36 +72,26 @@ def Parse():
                         else:
                             Variables.append(Var1)
 
+                    Parsed_Variables = "("
+
                     for x in Variables:
                         for i in open("./Sparkles/"+ Sparkle+"py", "r+"):
-                            if(x + "=" in i or x +" =" in i):
-                                if('"' in i):
-                                    print("String")
+                            if("" + x + "=" in i or "" + x + " =" in i and ("_" + x + "=" not in i or "_" + x + " =" not in i)):
+                                if('"' in i or "'" in i):
+                                    Parsed_Variables = Parsed_Variables + "String,"
                                 elif("True" in i or "False" in i):
-                                    print("Bool")
+                                    Parsed_Variables = Parsed_Variables + "Bool,"
+
                                 else:
-                                    print("Integer")
+                                    Parsed_Variables = Parsed_Variables + "Integer,"
 
+                    Parsed_Variables = Parsed_Variables.strip(",")
+                    Parsed_Variables = Parsed_Variables + "):"
 
+                    #print("yay")
+                    Parser = Parser.strip("("+Parse_Buffer+"):")
 
+                else:
+                    Parsed_Variables = ""
 
-                    print("yay")
-
-                Parse_Sparkles_Buffer.write(Sparkle+Parser + "\n")
-
-
-    print("PLS WORK")
-
-
-    print("")
-
-def Script_Maker():
-    # $Cruella.Main(): To append that
-    # !$ to add to the front
-    # %$ to print out the current buffer
-
-    print("Scripting")
-    Script = "test"
-
-def Run_Script(Script):
-    print(Script)
+                Parse_Sparkles_Buffer.write(Sparkle+ Parser + Parsed_Variables+ "\n")
