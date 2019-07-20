@@ -47,6 +47,10 @@ def Sparkle_Menu():
     print()
     print("List of found Sparkles")
     print("**********************")
+
+    with open("./Configs/Loaded_Sparkles.txt", "w+") as clear_file:
+        clear_file.write("")
+
     while True:
         with open('./Configs/Found_Sparkles.txt') as User_Readable:
             for i in User_Readable:

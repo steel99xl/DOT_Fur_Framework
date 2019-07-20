@@ -10,7 +10,7 @@ def Load_Scripting_Referance():
     os.system("xterm -hold -e cat Configs/Parse_Sparkles_Buffer.txt")
 
 def Writer():
-    print("test")
+    os.system("xterm -e python3 FrameWork/Sparkle_IDE.py")
 
 
 def Thread_Manager():
